@@ -1,21 +1,23 @@
 // Task 3: addUser(first_name, last_name, email)
 import { getServerURL } from "./task1.js";
 
-export function addUser(){
+export async function addUser(){
 
 
-  fetch(getServerURL() + "/users", {
+  const res = await fetch(getServerURL() + "/users", {
   method: "POST",
   body: JSON.stringify({
     id: 6,
     first_name: "Kai",
     last_name: "Nathaniel",
-    email: "'kai.n@example.org'"
+    email: "kai.n@example.org"
   }),
   headers: {
     "Content-Type": "application/json; charset=UTF-8"
   }
-}).then(res => res.json()).then(data => console.log(data)); // lo que el servidor devolvió
+}); // lo que el servidor devolvió
+
+return await res.json();
 }
 
-addUser();
+// console.log(await addUser());

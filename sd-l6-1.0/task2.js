@@ -11,7 +11,7 @@ export async function listUsers(){
 
        const data = await response.json()
 
-      //  console.log(data)
+      // console.log(data)
 
       return data;
         
@@ -23,4 +23,4 @@ export async function listUsers(){
   
 }
 
-// console.log(await listUsers());
+console.log(await listUsers());
